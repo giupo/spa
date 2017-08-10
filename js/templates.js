@@ -1,9 +1,11 @@
 "use-strict";
 
-var main = require("pug-loader!../templates/main.pug");
+var main = require("../templates/main.pug");
+var chat = require("../templates/chat.pug");
 
 templates = {
-  main: main
+  main: main,
+  chat: chat
 };
 
 module.exports = templates;

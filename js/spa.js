@@ -17,6 +17,7 @@ var domready = require('domready');
 
 var shell = require('./spa.shell');
 var css = require('../css/spa.css');
+// FIXME: move to spa.shell.js
 var shell_css = require('../css/spa.shell.css');
 
 const log = require('logplease').create('spa');

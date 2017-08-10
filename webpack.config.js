@@ -7,16 +7,20 @@ module.exports = {
     filename: 'app.js'
   },
 
-
-  node: {
+/*  node: {
     fs: "empty"
   },
-
+*/
+  
   module: {
     rules: [
       {
         test: /\.css$/,
         use: [ 'style-loader', 'css-loader' ]
+      },
+      {
+        test: /\.pug$/,
+        use: ['pug-loader']
       }
     ]
   },
