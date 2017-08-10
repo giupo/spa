@@ -15,20 +15,7 @@ var $ = require('jquery');
 $.uriAnchor = require('urianchor');
 var templates = require('./templates');
 
-let conf = {
-  filters: {
-    debug: 'Gray',
-    info: 'Black',
-    notice: 'Green',
-    warning: 'Blue',
-    error: 'Red',
-    critical: 'Orange',
-    alert: 'Cyan',
-    emergency: 'Magenta'
-  }
-};
-
-let log = require('js-logging').console(conf);
+const log = require('logplease').create('shell');
 
 var spa = {
   //---------------- BEGIN MODULE SCOPE VARIABLES --------------
@@ -97,8 +84,8 @@ var spa = {
   },
   
   toggleChat: function(do_extend, callback) {
-    log.info( "called " + String(do_extend) );
-    log.info(spa.jqueryMap);
+    log.debug( "called " + String(do_extend) );
+    log.debug(spa.jqueryMap);
     var px_chat_ht = spa.jqueryMap.$chat.height(),
     is_open = px_chat_ht === spa.configMap.chat_extend_height,
     is_closed = px_chat_ht === spa.configMap.chat_retract_height,
@@ -137,7 +124,7 @@ var spa = {
   //------------------- BEGIN PUBLIC METHODS -------------------
   // Begin Public method /initModule/
   initModule : function ( $container ) {
-    log.info($container);
+    log.debug($container);
     spa.stateMap.$container = $container;
     $container.html(spa.configMap.main_html);
     spa.setJqueryMap();

@@ -19,16 +19,16 @@ var shell = require('./spa.shell');
 var css = require('../css/spa.css');
 var shell_css = require('../css/spa.shell.css');
 
-let log = require('js-logging').console();
+const log = require('logplease').create('spa');
 
 module.exports = {
   initModule: function ( $container ) {
-    log.info("spa - initModule");
+    log.debug("spa - initModule");
     shell.initModule( $container );
   }
 };
 
 domready(function() {
-  log.info("hello!");
+  log.info("DOM is Ready, running App!");
   require('./spa').initModule( $('#spa') );
 });
